@@ -14,12 +14,12 @@ ENV APK_JAR https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.4.1.ja
 RUN mkdir -p /usr/local/bin
 
 RUN P=/tmp/$(basename $APK_SCRIPT) && \
-    curl -s -o $P $APK_SCRIPT && \
+    wget -q -O $P $APK_SCRIPT && \
     chmod +x $P && \
     mv $P /usr/local/bin
 
 RUN P=/tmp/$(basename $APK_JAR) && \
-    curl -s -o $P $APK_JAR && \
+    wget -q -O $P $APK_JAR && \
     chmod +x $P && \
     mv $P /usr/local/bin/apktool.jar
     
